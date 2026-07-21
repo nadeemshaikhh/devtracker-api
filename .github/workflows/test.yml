@@ -9,7 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,14 +31,4 @@ jobs:
         run: |
           node app.js &
           sleep 10
-          npx playwright test --reporter=list
-
-          - name: Start server and run tests
-        env:
-          MONGO_URL: ${{ secrets.MONGO_URL }}
-          PORT: 3000
-        run: |
-          node app.js &
-          sleep 10
-          echo "MONGO_URL is set: ${{ secrets.MONGO_URL != '' }}"
           npx playwright test --reporter=list
