@@ -31,5 +31,5 @@ jobs:
           PORT: 3000
         run: |
           node app.js &
-          sleep 3
+          sleep 10
           npx playwright test --reporter=list
